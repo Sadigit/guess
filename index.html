@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Guess</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="source">guessing your number</div>
+	<div class="bdiv"><button onclick="start();" class="btn">Start</button></div>
+
+
+
+
+</body>
+<script type="text/javascript">
+	// variables
+	let n=1
+	let count=0
+	let zero = "guessing your number"
+	let one="think a number between (1 to 50) "
+	let two="that_num + (that_num + 1)"
+	let three="now, (that_num (+) 9) "
+	let four= "then, (that_num (÷) 2)"
+	let five=" then, (that_num (-) the first number that you guessed)"
+	let six="the output is : 5 "
+	let text=zero;
+	// elements 
+	let contain = document.querySelector(".source")
+	
+	let btn = document.querySelector(".btn")
+	function start(){
+		count+=n
+		btn.innerHTML="Next";
+		if(count == 1){
+			text = one
+		}
+		else if(count == 2){
+			text = two
+		}
+		else if(count == 3){
+			text = three
+		}
+		else if(count == 4){
+			text = four
+		}
+		else if(count == 5){
+			text = five
+		}
+		else if(count == 6){
+			n=0
+			text = six
+			btn.innerHTML="finish"
+		}
+		contain.innerHTML=text
+	}
+</script>
+</html>
